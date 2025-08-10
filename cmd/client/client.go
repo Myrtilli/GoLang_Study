@@ -5,18 +5,18 @@ import (
     "strings"
 )
 
-type Vertex struct {
+type WebsiteURL struct {
 	url1 string
 	url2 string
     url3 string
 }
 
 func main() {
-    url := Vertex{"google.com", "youtube.com", "moodle.com"}
-    join(url)
+    url := WebsiteURL{"google.com", "youtube.com", "moodle.com"}
+    join(&url)
 }
 
-func join(v Vertex) {
+func join(v *WebsiteURL) {
     urls := []string{v.url1, v.url2, v.url3}
     for _, u := range urls {
         fullURL := strings.Join([]string{"http://", u}, "")
